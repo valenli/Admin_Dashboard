@@ -1,0 +1,19 @@
+{
+  "MAIN":"主要",
+  "LISTS":"清單",
+  "USEFUL":"作用",
+  "SERVICE":"服務",
+  "USER":"使用者",
+  "Dashboard": "儀表",
+  "Users": "使用者",
+  "Products": "產品",
+  "Orders": "訂單",
+  "Delivery": "配送",
+  "Stats": "統計",
+  "Notifications": "通知",
+  "System Health": "系统狀況",
+  "Logs": "函數",
+  "Settings": "設置",
+  "Profile": "個人資料",
+  "Logout": "登出"
+}

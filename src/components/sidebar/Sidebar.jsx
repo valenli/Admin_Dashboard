@@ -14,8 +14,15 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   const { dispatch } = useContext(DarkModeContext);
   return (
     <div className="sidebar">
@@ -27,62 +34,62 @@ const Sidebar = () => {
       <hr />
       <div className="center">
         <ul>
-          <p className="title">MAIN</p>
+          <p className="title">{t('MAIN')}</p>
           <li>
             <DashboardIcon className="icon" />
-            <span>Dashboard</span>
+            <span>{t('Dashboard')}</span>
           </li>
-          <p className="title">LISTS</p>
+          <p className="title">{t('LISTS')}</p>
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineOutlinedIcon className="icon" />
-              <span>Users</span>
+              <span>{t('Users')}</span>
             </li>
           </Link>
           <Link to="/products" style={{ textDecoration: "none" }}>
             <li>
               <LocalShippingIcon className="icon" />
-              <span>Products</span>
+              <span>{t('Products')}</span>
             </li>
           </Link>
           <li>
             <CreditCardIcon className="icon" />
-            <span>Orders</span>
+            <span>{t('Orders')}</span>
           </li>
           <li>
             <StoreIcon className="icon" />
-            <span>Delivery</span>
+            <span>{t('Delivery')}</span>
           </li>
-          <p className="title">USEFUL</p>
+          <p className="title">{t('USEFUL')}</p>
           <li>
             <InsertChartIcon className="icon" />
-            <span>Stats</span>
+            <span>{t('Stats')}</span>
           </li>
           <li>
             <SettingsApplicationsIcon className="icon" />
-            <span>Notifications</span>
+            <span>{t('Notifications')}</span>
           </li>
-          <p className="title">SERVICE</p>
+          <p className="title">{t('SERVICE')}</p>
           <li>
             <ExitToAppIcon className="icon" />
-            <span>System Health</span>
+            <span>{t('System Health')}</span>
           </li>
           <li>
             <NotificationsNoneIcon className="icon" />
-            <span>Logs</span>
+            <span>{t('Logs')}</span>
           </li>
           <li>
             <SettingsSystemDaydreamOutlinedIcon className="icon" />
-            <span>Settings</span>
+            <span>{t('Settings')}</span>
           </li>
-          <p className="title">USER</p>
+          <p className="title">{t('USER')}</p>
           <li>
             <PsychologyOutlinedIcon className="icon" />
-            <span>Profile</span>
+            <span>{t('Profile')}</span>
           </li>
           <li>
             <AccountCircleOutlinedIcon className="icon" />
-            <span>Logout</span>
+            <span>{t('Logout')}</span>
           </li>
         </ul>
       </div>
@@ -96,6 +103,7 @@ const Sidebar = () => {
           onClick={() => dispatch({ type: "DARK" })}
         ></div>
       </div>
+
     </div>
   );
 };
