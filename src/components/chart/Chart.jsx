@@ -1,4 +1,5 @@
 import "./chart.scss";
+import { useTranslation } from "react-i18next";
 import {
   AreaChart,
   Area,
@@ -18,9 +19,15 @@ const data = [
 ];
 
 const Chart = ({aspect, title}) => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <div className="chart">
-      <div className="title">{title}</div>
+      <div className="title">{t(title)}</div>
       <ResponsiveContainer width="100%" aspect={aspect}>
         <AreaChart
           width={730}

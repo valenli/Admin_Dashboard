@@ -30,9 +30,9 @@ export const userInputs = [
     },
     {
       id: 6,
-      label: "Address",
+      label: "Age",
       type: "text",
-      placeholder: "Elton St. 216 NewYork",
+      placeholder: "18",
     },
     {
       id: 7,

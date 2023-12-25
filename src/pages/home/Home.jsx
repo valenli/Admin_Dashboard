@@ -5,8 +5,14 @@ import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Widget from "../../components/widget/Widget";
 import "./home.scss";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <div className="home">
       <Sidebar />
@@ -23,7 +29,7 @@ const Home = () => {
           <Chart title="Last 6 Months (Revenue)" aspect={2/1}/>
         </div>
         <div className="listContainer">
-          <div className="listTitle">Latest Transactions</div>
+          <div className="listTitle">{t("Latest Transactions")}</div>
           <Table />
         </div>
       </div>

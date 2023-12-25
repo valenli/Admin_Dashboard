@@ -6,8 +6,15 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { useTranslation } from "react-i18next";
 
 const List = () => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   const rows = [
     {
       id: 1143155,
@@ -66,13 +73,13 @@ const List = () => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell className="tableCell">Tracking ID</TableCell>
-            <TableCell className="tableCell">Product</TableCell>
-            <TableCell className="tableCell">Customer</TableCell>
-            <TableCell className="tableCell">Date</TableCell>
-            <TableCell className="tableCell">Amount</TableCell>
-            <TableCell className="tableCell">Payment Method</TableCell>
-            <TableCell className="tableCell">Status</TableCell>
+            <TableCell className="tableCell">{t("Tracking ID")}</TableCell>
+            <TableCell className="tableCell">{t("Product")}</TableCell>
+            <TableCell className="tableCell">{t("Customer")}</TableCell>
+            <TableCell className="tableCell">{t("Date")}</TableCell>
+            <TableCell className="tableCell">{t("Amount")}</TableCell>
+            <TableCell className="tableCell">{t("Payment Method")}</TableCell>
+            <TableCell className="tableCell">{t("Status")}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
